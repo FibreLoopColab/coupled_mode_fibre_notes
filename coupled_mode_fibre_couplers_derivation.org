@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       d075d0bb-3045-4589-8ec3-8ad3d381a262
+:END:
+#+title: Coupled Mode Fibre Couplers Derivation

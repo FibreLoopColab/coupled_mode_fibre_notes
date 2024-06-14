@@ -1,0 +1,52 @@
+\documentclass[fontsize=12pt,paper=usletter,open=any,
+  twoside=no,toc=listof,toc=bibliography,
+  captions=nooneline,captions=tableabove,english,DIV=calc,numbers=noenddot,final,parskip=full,
+  headinclude=true,footinclude=false,BCOR=0mm,heading=normal]{scrartcl}
+
+\pdfvariable suppressoptionalinfo 512\relax
+\interfootnotelinepenalty=10000
+\synctex=1
+
+\usepackage[english]{babel}
+
+\author{Valentin Boettcher}
+\usepackage{hirostyle}
+\usepackage{hiromacros}
+\usepackage{loopmacros}
+\addbibresource{references.bib}
+
+\title{Input-Output Theory for Modulated Optical Fibre Resonators}
+\date{\today}
+\graphicspath{{graphics}}
+\usetikzlibrary{external}
+\tikzexternalize[prefix=figures/]
+
+%\includeonly{./chapters/03_02_input_output_relations}
+\begin{document}
+\maketitle
+\tableofcontents
+
+\cleardoubleemptypage
+
+\include{./chapters/01_02_general_theory}
+\include{./chapters/03_application_walk}
+\include{./chapters/03_02_input_output_relations}
+
+\appendix
+\include{./chapters/99_A01_io_theory}
+
+\printbibliography
+\printindex
+\end{document}
+
+
+%%% Local Variables:
+%%% mode: latex/mps
+%%% TeX-master: t
+%%% TeX-output-dir: "output"
+%%% TeX-engine: luatex
+%%% jinx-languages: "en_CA"
+%%% End:
+
+
+

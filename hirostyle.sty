@@ -1,0 +1,125 @@
+\ProvidesPackage{hirostyle}
+% load early
+\usepackage{physics}
+\usepackage{graphicx, booktabs, float}
+\usepackage[tbtags]{mathtools}
+\mathtoolsset{mathic=true}
+\usepackage{lualatex-math}
+\usepackage[backend=biber, language=english, style=ieee, sorting=none, backref=true]{biblatex}
+\usepackage{siunitx}
+\usepackage{caption}
+\usepackage[protrusion=true,expansion=true,tracking=true]{microtype}
+\usepackage[autostyle=true]{csquotes}
+\usepackage{setspace}
+
+\usepackage{tabularx}
+\usepackage{bbold}
+\usepackage{scrhack}
+
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Pagella}
+\usepackage{euler-math}
+\usepackage[autooneside]{scrlayer-scrpage}
+\usepackage[titletoc]{appendix}
+
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\raggedbottom
+
+% Index and Nomenclature
+\usepackage{imakeidx}
+\makeindex
+\newcommand{\indexterm}[1]{\emph{#1}\index{#1}}
+
+\usepackage[pdfencoding=auto,hidelinks,colorlinks=true,
+  linkcolor=blue,
+  filecolor=blue,
+  citecolor = black,
+  urlcolor=cyan,]{hyperref} % load late
+\usepackage[capitalize]{cleveref}
+
+\usepackage[toc,symbols,nomain]{glossaries}
+\makeglossaries
+\NewDocumentCommand{\symbdef}{ommm}{%
+  \expandafter\newglossaryentry{#2}{type=symbols,sort=#2,description={\IfNoValueTF{#1}{}{\ensuremath{(#1)}\,}%
+        #4},%
+    name=\ensuremath{#3},%
+  }%
+  \expandafter\newcommand\csname #2\endcsname{{\gls*{#2}}}%
+}
+
+%% SI units
+\sisetup{separate-uncertainty = true}
+
+%% Captions
+\captionsetup{font=small,format=plain}
+\captionsetup[sub]{font=small,format=plain}
+
+%% Font for headings
+\addtokomafont{disposition}{\rmfamily}
+
+
+% Allow math page breaks
+\allowdisplaybreaks
+
+% cursive bold in maths
+\unimathsetup{math-style=TeX,bold-style=ISO}
+
+\recalctypearea
+
+% aligned oversets, must be loaded last
+\usepackage{aligned-overset}
+
+% large integrals
+\everydisplay{\Umathoperatorsize\displaystyle=5ex}
+
+% working setminus
+\AtBeginDocument{% to do this after unicode-math has done its work
+  \renewcommand{\setminus}{\mathbin{\backslash}}%
+}
+
+% calculate div last
+\KOMAoptions{DIV=last}
+
+% fix section spacing
+\RedeclareSectionCommands[
+  runin=false,
+  afterskip=-.5em
+]{section}
+\RedeclareSectionCommands[
+  runin=false,
+  afterskip=-.5em
+]{subsection}
+\RedeclareSectionCommands[
+  runin=false,
+  afterskip=-.5em
+]{subsubsection}
+
+
+% Custom theorems for highlighting
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\AtBeginEnvironment{defn}{%
+  \pushQED{\qed}\renewcommand{\qedsymbol}{$\triangle$}%
+}
+\AtEndEnvironment{defn}{\popQED\enddefn}
+\crefname{defn}{definition}{definitions}
+
+\theoremstyle{definition}
+\newtheorem{mresult}{Useful Relation}
+\AtBeginEnvironment{mresult}{%
+  \pushQED{\qed}\renewcommand{\qedsymbol}{$\triangle$}%
+}
+\AtEndEnvironment{mresult}{\popQED\endmresult}
+\crefname{mresult}{minor result}{minor results}
+
+\theoremstyle{definition}
+\newtheorem{result}{Result}
+\AtBeginEnvironment{result}{%
+  \pushQED{\qed}\renewcommand{\qedsymbol}{$\triangle$}%
+}
+\AtEndEnvironment{result}{\popQED\endresult}
+\crefname{result}{result}{results}

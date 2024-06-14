@@ -1,0 +1,8 @@
+*.bak
+*.log
+output
+auto
+.direnv
+index-figure*
+/.cache/
+indent.log
