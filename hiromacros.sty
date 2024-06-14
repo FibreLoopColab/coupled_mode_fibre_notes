@@ -127,25 +127,28 @@
 
 % effective hamiltonian
 \newcommand{\heff}[2][t]{\ensuremath{H_{\eff}\bqty{#2}(#1)}}
+
+
+
 \makeatletter
 \newsavebox\myboxA
 \newsavebox\myboxB
 \newlength\mylenA
 
 \newcommand*\xoverline[2][0.75]{%
-    \sbox{\myboxA}{$\m@th#2$}%
-    \setbox\myboxB\null% Phantom box
-    \ht\myboxB=\ht\myboxA%
-    \dp\myboxB=\dp\myboxA%
-    \wd\myboxB=#1\wd\myboxA% Scale phantom
-    \sbox\myboxB{$\m@th\overline{\copy\myboxB}$}%  Overlined phantom
-    \setlength\mylenA{\the\wd\myboxA}%   calc width diff
-    \addtolength\mylenA{-\the\wd\myboxB}%
-    \ifdim\wd\myboxB<\wd\myboxA%
-       \rlap{\hskip 0.5\mylenA\usebox\myboxB}{\usebox\myboxA}%
-    \else
-        \hskip -0.5\mylenA\rlap{\usebox\myboxA}{\hskip 0.5\mylenA\usebox\myboxB}%
-    \fi}
+  \sbox{\myboxA}{$\m@th#2$}%
+  \setbox\myboxB\null% Phantom box
+  \ht\myboxB=\ht\myboxA%
+  \dp\myboxB=\dp\myboxA%
+  \wd\myboxB=#1\wd\myboxA% Scale phantom
+  \sbox\myboxB{$\m@th\overline{\copy\myboxB}$}%  Overlined phantom
+  \setlength\mylenA{\the\wd\myboxA}%   calc width diff
+  \addtolength\mylenA{-\the\wd\myboxB}%
+  \ifdim\wd\myboxB<\wd\myboxA%
+    \rlap{\hskip 0.5\mylenA\usebox\myboxB}{\usebox\myboxA}%
+  \else
+    \hskip -0.5\mylenA\rlap{\usebox\myboxA}{\hskip 0.5\mylenA\usebox\myboxB}%
+  \fi}
 \makeatother
 
 \DeclareMathOperator{\bosedist}{\xoverline{n}}
@@ -167,7 +170,7 @@
 }
 
 \DeclareCiteCommand{\refcite}
-  {%
+{%
   \ifnum\thecitetotal=1
     \bibstring{refname}%
   \else%
@@ -175,10 +178,10 @@
   \fi%
   \addspace\bibopenbracket%
   \usebibmacro{cite:init}%
-   \usebibmacro{prenote}}
-  {\usebibmacro{citeindex}%
-   \usebibmacro{cite:comp}}
-  {}
-  {\usebibmacro{cite:dump}%
-   \usebibmacro{postnote}%
-   \bibclosebracket}
+  \usebibmacro{prenote}}
+{\usebibmacro{citeindex}%
+  \usebibmacro{cite:comp}}
+{}
+{\usebibmacro{cite:dump}%
+  \usebibmacro{postnote}%
+  \bibclosebracket}

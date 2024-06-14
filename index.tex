@@ -143,15 +143,15 @@ where \(\mt{k}\;(\mt{q})\) are diagonal matrices with the
 follows from \cref{eq:3}
 \begin{equation}
   \label{eq:11}
-  \mt{C}_{m,n} = ∫_{0}^{Δz}C_{12}(z)\eu^{-\iu \pqty{k_{m}-q_{n}}}\dd{z}.
+  \mt{C}_{m,n} = ∫_{0}^{Δz}C_{12}(z)\eu^{-\iu \pqty{k_{m}-q_{n}}z}\dd{z}.
 \end{equation}
 
 By finding the solutions to \(\det[\mt{M}]=0\), we can identify the
 mode frequencies of the resonators. To simplify the calculation we
 will assume that the wavelengths of all relevant modes are much
-shorter than \(Δz\) (i.e. \(k_{n}\gg Δz^{-1}\)) and that thus only modes
-with \(k_{m}=q_{n}\) couple. As \(k_{N n} = q_{n}\) for \(n\in \ZZ\), we
-have
+shorter than \(Δz\) (i.e. \(\abs{q_{m}-k_{n}} \gg Δz^{-1}\) for all
+relevant \(n,\,m\)) and that thus only modes with \(k_{m}=q_{n}\)
+couple. As \(k_{N n} = q_{n}\) for \(n\in \ZZ\), we have
 \begin{equation}
   \label{eq:13}
   \mt{C}_{m,n} =
