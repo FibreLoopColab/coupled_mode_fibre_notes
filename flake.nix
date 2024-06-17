@@ -32,7 +32,6 @@
               export PATH="${pkgs.lib.makeBinPath buildInputs}";
               export SOURCE_DATE_EPOCH="${toString self.sourceInfo.lastModified}"
 
-              cd papers/Report/
               mkdir -p .cache/texmf-var
               mkdir -p output/src
 
