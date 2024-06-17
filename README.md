@@ -16,4 +16,4 @@ coupled with such a coupler will be expressed in terms of this
 parameter.
 
 
-[latest pdf](https://nightly.link/vale981/coupled_mode_fibre_notes/workflows/build/main/index.pdf.zip)
+[latest pdf](https://nightly.link/vale981/FibreLoopColab/workflows/build/main/index.pdf.zip)
