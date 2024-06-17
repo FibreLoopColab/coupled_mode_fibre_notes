@@ -209,10 +209,51 @@ oscillates into the second fiber. Also, when in doubt, it may be
 useful to try \(s^{-1}\) as it's not always clear which output port of
 the fiber coupler corresponds to which fiber.
 
+\section{Applications}
+\label{sec:applications}
+
 As an example \(s=75/25\) and \(n=0\) gives \(\frac{δ}{Ω} = 0.167\)
 which is reasonably close to the value determined \(δ/Ω = 0.171\)
 in~\cite{Pellerin2023}\footnote{The \(δ\) given in the paper
   corresponds to \(2δ\) in this note's notation.}.
+
+In the lab setup we have \(N\approx 9\) and \(s=25/75\) (note the inversion
+compared to above) yielding \(δ/Ω \approx 1/4\), as observed!
+
+For the eventual experiment, we would like to have \(N=2 M + 1\),
+where \(M\) is the number of bath modes. At the same time, we keep
+\(δ/Ω = 1/4\) fixed. This gives
+\begin{equation}
+  \label{eq:7}
+  s = \tan[2](\frac{π}{2 \sqrt{2 M + 1}}).
+\end{equation}
+So for \(M=10\) bath modes we obtain \(s\approx10:90\), for \(M=20\) we get
+\(s=6:94\) and for \(M=30\) we have \(s=4:96\). See also \cref{fig:splitting_ratio}.
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+        title={Plot of \cref{eq:7}},
+        xlabel={$M$},
+        ylabel={$s$},
+        grid=both,
+        minor grid style={dotted},
+        width=\textwidth,
+        height=0.6\textwidth,
+        trig format plots=rad,
+        font=\footnotesize,
+      ]
+      \addplot [
+        domain=10:50,
+        samples=300,
+        color=red,
+      ]%
+      {tan(pi/(2 * sqrt(2 * x + 1)))^2};
+    \end{axis}
+  \end{tikzpicture}
+  \label{fig:splitting_ratio}
+\end{figure}
 
 \printbibliography
 \printindex
