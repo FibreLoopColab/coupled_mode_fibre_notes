@@ -234,9 +234,9 @@ So for \(M=10\) bath modes we obtain \(s\approx10:90\), for \(M=20\) we get
   \centering
   \begin{tikzpicture}
     \begin{axis}[
-        title={Plot of \cref{eq:7}},
+        title={Plot of \cref{eq:7}, \(s = b : (100-b)\)},
         xlabel={$M$},
-        ylabel={$s$},
+        ylabel={$b$},
         grid=both,
         minor grid style={dotted},
         width=\textwidth,
@@ -249,7 +249,7 @@ So for \(M=10\) bath modes we obtain \(s\approx10:90\), for \(M=20\) we get
         samples=300,
         color=red,
       ]%
-      {tan(pi/(2 * sqrt(2 * x + 1)))^2};
+      {100 * (tan(pi/(2 * sqrt(2 * x + 1)))^2) / ((tan(pi/(2 * sqrt(2 * x + 1)))^2) + 1)};
     \end{axis}
   \end{tikzpicture}
   \label{fig:splitting_ratio}
